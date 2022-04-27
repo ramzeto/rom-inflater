@@ -21,7 +21,7 @@ The command shown above is explained like this:
 
 * **hack G.U. Vol.1 Rebirth (UNDUB) (USA).7z** is the filename of the compressed ROM (Zip and 7z formats are supported).
 * **.iso** is the extension to look up after inflating (more than one extension or filename can be searched for).
-* **flatpak run net.pcsx2.PCSX2 --fullscreen --nogui %INFLATEDFILE%** is the command to execute after inflating. **%INFLATEDFILE%** will be replaced by the absolute path of the inflated suitable file.
+* **flatpak run net.pcsx2.PCSX2 --fullscreen --nogui %INFLATEDFILE%** is the command to execute after inflating. **%INFLATEDFILE%** will be replaced with the absolute path of the inflated suitable file.
 
 
 More than one file extensions or filenames to look up can be passed as parameters. In this example, the ROM **Final Fantasy VIII (USA) (Disc 4).zip** will be launched using Retroarch. The extensions **.cue** and **.bin** will be searched for.
