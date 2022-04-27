@@ -21,10 +21,10 @@ The command shown above is explained like this:
 
 * **hack G.U. Vol.1 Rebirth (UNDUB) (USA).7z** is the filename of the compressed ROM (Zip and 7z formats are supported).
 * **.iso** is the extension to look up after inflating (more than one extension or filename can be searched for).
-* **flatpak run net.pcsx2.PCSX2 --fullscreen --nogui %INFLATEDFILE%** is the command to execute after inflating. **%INFLATEDFILE%*** will be replaced by the absolute path of the inflated suitable file.
+* **flatpak run net.pcsx2.PCSX2 --fullscreen --nogui %INFLATEDFILE%** is the command to execute after inflating. **%INFLATEDFILE%** will be replaced by the absolute path of the inflated suitable file.
 
 
-More than one file extension or filename to look up can be passed. In this example, the ROM **Final Fantasy VIII (USA) (Disc 4).zip** will be launched using Retroarch. The extensions **.cue** and **.bin** will be searched for.
+More than one file extensions or filenames to look up can be passed as parameters. In this example, the ROM **Final Fantasy VIII (USA) (Disc 4).zip** will be launched using Retroarch. The extensions **.cue** and **.bin** will be searched for.
 
     RomInflater-x86_64.AppImage "Final Fantasy VIII (USA) (Disc 4).zip" .cue .bin "retroarch -L ~/.config/retroarch/cores/mednafen_psx_hw_libretro.so %INFLATEDFILE%"
 
@@ -34,14 +34,14 @@ If more than one suitable file is found, a launcher dialog will be displayed:
 ![RomInflater](https://www.dropbox.com/s/4gdquacveubdtqs/launcher_window.png?raw=1)
 
 
-If multiple **.cue** files are found, a **.m3u** will be automatically generated with the **.cue** files listed in order, in case the ROM is to be used with the [Beetle Saturn core in Retroarch](https://docs.libretro.com/library/beetle_saturn/).
+If multiple **.cue** files are found, a **.m3u** file will be automatically generated with the **.cue** files listed in order. In case the ROM is to be used with the [Beetle Saturn core in Retroarch](https://docs.libretro.com/library/beetle_saturn/).
 
 ![RomInflater](https://www.dropbox.com/s/ibqdmc527ohnbxu/launcher_window_m3u.png?raw=1)
 
 
 ## Steam
 
-RomInflater can be used to launch ROMs using the Steam version of Retroarch. In this example, the ROM **Silent Hill (USA).zip** will be launched using the Steam version of Retroarch with the **Beetle PSX core** (The core should be installed as DLC).
+RomInflater can be used to inflate and launch ROMs using the Steam version of Retroarch. In this example, the ROM **Silent Hill (USA).zip** will be launched using the Steam version of Retroarch with the **Beetle PSX core** (The core should be installed as DLC).
 
 
 Click on **ADD A GAME** -> **Add a Non-Steam Game**:
