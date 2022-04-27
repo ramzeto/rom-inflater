@@ -37,9 +37,9 @@ APP_ID = io.github.RomInflater
 DEFINES += APP_ID=\\\"$$APP_ID\\\"
 
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+#qnx: target.path = /tmp/$${TARGET}/bin
+#else: unix:!android: target.path = /opt/$${TARGET}/bin
+#!isEmpty(target.path): INSTALLS += target
 
 unix:!macx: LIBS += -larchive
 
@@ -64,5 +64,5 @@ unix {
 INSTALLS += target
 
 DISTFILES += \
-    resources/qtquickapp.desktop \
-    resources/qtquickapp.png
+    resources/io.github.RomInflater.desktop \
+    resources/io.github.RomInflater.svg
