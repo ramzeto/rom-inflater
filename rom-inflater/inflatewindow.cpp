@@ -284,7 +284,7 @@ void InflateWindow::makeM3uFile()
         }
     }
 
-    if(cueFileInforList.size() > 0)
+    if(cueFileInforList.size() > 1)
     {
         std::cout << __FUNCTION__ << " " << (romDirectory.absolutePath() + "/auto.m3u").toLocal8Bit().constData() << std::endl;
 
@@ -293,13 +293,14 @@ void InflateWindow::makeM3uFile()
         {
             return;
         }
-
         QTextStream m3uTextStream(&m3uFile);
         for(int c = 0; c < cueFileInforList.size(); c++)
         {
             QFileInfo fileInfo = cueFileInforList.at(c);
             m3uTextStream << fileInfo.absoluteFilePath() << "\n";
         }
+        m3uFile.close();
+
         suitableFileInfoList.prepend(QFileInfo(m3uFile));
     }
 }

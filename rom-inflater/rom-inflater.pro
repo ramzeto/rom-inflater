@@ -41,6 +41,28 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
--larchive
-
 unix:!macx: LIBS += -larchive
+
+
+# Default rules for deployment.
+unix {
+    isEmpty(PREFIX) {
+        PREFIX = /usr
+    }
+
+    target.path = $$PREFIX/bin
+
+    shortcutfiles.files = resources/io.github.RomInflater.desktop
+    shortcutfiles.path = $$PREFIX/share/applications/
+    data.files += resources/io.github.RomInflater.svg
+    data.path = $$PREFIX/share/pixmaps/
+
+    INSTALLS += shortcutfiles
+    INSTALLS += data
+}
+
+INSTALLS += target
+
+DISTFILES += \
+    resources/qtquickapp.desktop \
+    resources/qtquickapp.png

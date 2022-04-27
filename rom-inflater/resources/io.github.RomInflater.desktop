@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=RomInflater
+Exec=rom-inflater
+Icon=io.github.RomInflater
+Type=Application
+Categories=Game;

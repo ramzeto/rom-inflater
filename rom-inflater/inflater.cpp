@@ -92,6 +92,7 @@ void Inflater::run()
             // Cancels
             if(canceled)
             {
+                std::cerr << "Inflater::" << __FUNCTION__ << " canceled" << std::endl;
                 result = RESULT_CANCELED;
                 break;
             }
@@ -163,7 +164,7 @@ void Inflater::calculateInflatedSize()
 
 int Inflater::copyData(archive* ar, archive* aw)
 {
-    int r;
+    int r = ARCHIVE_OK;
     const void *buff;
     size_t size;
 #if ARCHIVE_VERSION_NUMBER >= 3000000
@@ -201,8 +202,11 @@ int Inflater::copyData(archive* ar, archive* aw)
             // Cancels
             if(canceled)
             {
+                std::cerr << "Inflater::" << __FUNCTION__ << " canceled" << std::endl;
                 break;
             }
             //_____
     }
+
+    return r;
 }
