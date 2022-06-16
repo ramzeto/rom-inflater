@@ -30,7 +30,7 @@ FORMS += \
 TRANSLATIONS += \
     rom-inflater_es_419.ts
 
-VERSION = 1.0
+VERSION = 1.1
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 APP_ID = io.github.RomInflater

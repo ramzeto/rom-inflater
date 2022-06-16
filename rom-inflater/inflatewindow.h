@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QDir>
+#include <QFile>
+#include <QFileInfo>
 
 #include "inflater.h"
 
@@ -36,6 +38,8 @@ private:
     Ui::InflateWindow *ui;
 
     QString compressedRomFilename;
+    QFile compressedRomFile;
+    QFileInfo compressedRomFileInfo;
     QString command;
     QStringList extensionsOrFilenames;
 

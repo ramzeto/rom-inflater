@@ -100,6 +100,9 @@ void InflateWindow::setCompressedRomFilename(const QString &value)
 {
     compressedRomFilename = value;
     ui->compressedRomLabel->setText(compressedRomFilename);
+
+    compressedRomFile.setFileName(compressedRomFilename);
+    compressedRomFileInfo.setFile(compressedRomFile);
 }
 
 void InflateWindow::setExtensionsOrFilenames(const QStringList &value)
@@ -113,10 +116,7 @@ void InflateWindow::setCommand(const QString &value)
 }
 
 void InflateWindow::inflate()
-{
-    QFile compressedRomFile(compressedRomFilename);
-    QFileInfo compressedRomFileInfo(compressedRomFile);
-
+{    
     std::cout << __FUNCTION__ << " compressedRomFileInfo: " << compressedRomFileInfo.fileName().toLocal8Bit().constData() << std::endl;
 
     romDirectory = QDir(romsDirectory.absolutePath() + "/" + compressedRomFileInfo.fileName().replace(".", "_").replace(" ", "_"));
@@ -286,9 +286,9 @@ void InflateWindow::makeM3uFile()
 
     if(cueFileInforList.size() > 1)
     {
-        std::cout << __FUNCTION__ << " " << (romDirectory.absolutePath() + "/auto.m3u").toLocal8Bit().constData() << std::endl;
+        std::cout << __FUNCTION__ << " " << (romDirectory.absolutePath() + "/" + compressedRomFileInfo.baseName() + ".m3u").toLocal8Bit().constData() << std::endl;
 
-        QFile m3uFile(romDirectory.absolutePath() + "/auto.m3u");
+        QFile m3uFile(romDirectory.absolutePath() + "/" + compressedRomFileInfo.baseName() + ".m3u");
         if (!m3uFile.open(QIODevice::WriteOnly | QIODevice::Text))
         {
             return;
