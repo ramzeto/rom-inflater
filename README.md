@@ -66,7 +66,7 @@ Edit the properties whith these values:
 * **START IN** The absolute path of the Steam Retroarch installation.
 * **LAUNCH OPTIONS** The parameters that RomInflater will use to inflate and launch the ROM. In this example:
 
-    "~/Games/Silent Hill (USA).zip" .cue "~/.steam/steam/steamapps/common/SteamLinuxRuntime_sniper/run -- ./retroarch.sh -L mednafen_psx_libretro.so %INFLATEDFILE%"
+    "```~```/Games/Silent Hill (USA).zip" .cue "```~```/.steam/steam/steamapps/common/SteamLinuxRuntime_sniper/run -- ./retroarch.sh -L mednafen_psx_libretro.so %INFLATEDFILE%"
 
 ![RomInflater](https://www.dropbox.com/s/xy9dnmo4t6dt7tv/steam_properties_edit.png?raw=1)
 
